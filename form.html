@@ -53,17 +53,31 @@
 </form>
 <script>
 function validateForm() {
-  let x = document.forms["pizza_form"]["name"].value;
-  
+
   document.forms["pizza_form"]["name"].required = true;
   document.forms["pizza_form"]["emergency_name"].required = true;
   document.forms["pizza_form"]["emergency_number"].required = true;
-  
+
+  let x = document.forms["pizza_form"]["name"].value;
+  let y = document.forms["pizza_form"]["emergency_name"].value;
+  let z = document.forms["pizza_form"]["emergency_number"].value;
+ 
 if (x == "") {
     alert("Name must be filled out");
     return false;
   }
  
+if (y == "") {
+    alert("Emergency Name must be filled out");
+    return false;
+  }
+ 
+if (z == "") {
+    alert("Emergency Number must be filled out");
+    return false;
+  }
+ 
+
   
 }
 </script>

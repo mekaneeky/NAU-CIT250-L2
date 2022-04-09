@@ -1,0 +1,69 @@
+<h1> NAU's Free Pizza Registration</h1>
+<form name="pizza_form" action="resolve_form.php" onsubmit="return validateForm()" method="post">
+    <p>Your name: <input type="text" name="name" /></p>
+    <p>Number of Pizzas requested: <input type="text" name="pizza_count" /></p>
+
+        <input type="radio" id="eel" name="flavor" value="eel">
+        <label for="eel">BBQ EEL w/Pineapple</label><br>
+
+        <input type="radio" id="racoon" name="pizza_flavor" value="racoon">
+        <label for="racoon">Racoon Madness</label><br>
+
+        <input type="radio" id="lizard" name="pizza_flavor" value="lizard" checked>
+        <label for="lizard">Lizard Supreme</label>
+        <br>
+        <br>
+
+        <label for="nau_department">What's your affliation with NAU?</label>
+
+        <select name="department" id="department">
+          <option value="faculty">Faculty</option>
+          <option value="student">Student</option>
+          <option value="other">Other</option>
+        </select>
+
+    <p>Your date of birth: <input type="date" name="dob" /></p>
+    
+    <label for="emergency_name">Emergency contact infomration in case of pizza overdose</label>
+        
+        <p>Emergency contact Name : <input type="text" name="emergency_name" /></p>
+        <p>Emergency contact Number : <input type="text" name="emergency_number" /></p>
+    
+     <label for="pizza_overload">Preferred method of Pizza Overdose Treatment?</label>
+
+        <select name="treatment" id="treatment">
+          <option value="pizza">Eating more pizza</option>
+          <option value="acid">Drinking acid to dissolve the excess pizza</option>
+          <option value="calories">Burning off the extra calories by climbing 90000 steps</option>
+        </select>
+
+    <div> 
+    <label for="super_spicy">Do you want the pizza super spicy?</label>
+    <input type="checkbox" id="pizza_spicy" name="pizza_spicy"
+         checked>
+    </div>
+
+    <div>
+        <label for="vegan_gluten">Do you want the free-trade vegan gluten-free artisinal pizza?</label>
+        <input type="checkbox" id="vegan_gluten" name="vegan_gluten">
+
+    </div>
+
+    <p><input type="submit" /></p>
+</form>
+<script>
+function validateForm() {
+  let x = document.forms["pizza_form"]["name"].value;
+  
+  document.forms["pizza_form"]["name"].required = true;
+  document.forms["pizza_form"]["emergency_name"].required = true;
+  document.forms["pizza_form"]["emergency_number"].required = true;
+  
+if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+ 
+  
+}
+</script>
